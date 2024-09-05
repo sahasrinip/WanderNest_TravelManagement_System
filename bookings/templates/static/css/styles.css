@@ -1,0 +1,114 @@
+/* General body styles */
+body {
+    padding-top: 56px; /* Adjust padding to accommodate the fixed navbar */
+    background-color: #A7C7E7; /* Pastel deep blue background */
+    font-family: Arial, sans-serif; /* Set a clean and modern font */
+}
+
+/* Navbar styles */
+.navbar {
+    margin-bottom: 20px; /* Add some space below the navbar */
+    background-color: #BBE9FF; /* Sky blue background color */
+}
+
+.navbar-nav .nav-link {
+    color: #000 !important; /* Ensure text color for navbar links */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0056b3 !important; /* Change color on hover */
+}
+
+/* Container styles */
+.container {
+    max-width: 960px;
+    margin-top: 20px; /* Add some space above the container */
+}
+
+/* Card styles for travel options */
+.card {
+    margin-bottom: 20px; /* Space between cards */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.card-header {
+    background-color: #007bff; /* Header color for cards */
+    color: #fff; /* Text color for card header */
+    font-weight: bold; /* Make header text bold */
+}
+
+.card-body {
+    padding: 20px; /* Padding inside card body */
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #007bff; /* Primary button color */
+    border-color: #007bff; /* Border color for primary button */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    border-color: #004085; /* Darker border on hover */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Danger button color */
+    border-color: #dc3545; /* Border color for danger button */
+}
+
+.btn-danger:hover {
+    background-color: #c82333; /* Darker shade on hover */
+    border-color: #bd2130; /* Darker border on hover */
+}
+
+/* Form styles */
+.form-control {
+    border-radius: 5px; /* Rounded corners for form inputs */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Space below form groups */
+}
+
+/* List group styles */
+.list-group-item {
+    border-radius: 5px; /* Rounded corners for list items */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center; /* Center-align the navbar links on small screens */
+    }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.carousel-item img {
+    height: 100vh; /* Full viewport height */
+    object-fit: cover; /* Cover the container while preserving aspect ratio */
+}
+
+.carousel-caption {
+    background: #000; /* Dark background for text readability */
+    padding: 10px; /* Add some padding around the caption text */
+}
+
+.carousel-caption h2 {
+    font-size: 2.5rem; /* Adjust font size for the heading */
+}
+
+.carousel-caption h4 {
+    font-size: 1.5rem; /* Adjust font size for the caption */
+}
+
+/* Custom style for the welcome message */
+.welcome-message {
+    color: #ffffff; /* White color */
+    font-size: 1.25rem; /* Adjust the size as needed */
+    margin-top: 2px; /* Adjust margin if necessary */
+}

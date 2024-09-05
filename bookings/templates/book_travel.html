@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Book Travel{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Book Your Travel</h2>
+    <form method="post" action="{% url 'book_travel' travel_option.travel_id %}" class="mt-4">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        
+        <input type="hidden" name="travel_option_id" value="{{ travel_option.travel_id }}">
+
+        <div class="form-group">
+            <label for="total_price">Total Price:</label>
+            <span id="total_price" class="font-weight-bold">₹0</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Book Now</button>
+    </form>
+
+    <script>
+        const pricePerSeat = {{ travel_option.price }};
+        const numberOfSeatsInput = document.getElementById('id_number_of_seats');
+        const totalPriceDisplay = document.getElementById('total_price');
+
+        numberOfSeatsInput.addEventListener('input', function() {
+            const numberOfSeats = parseInt(numberOfSeatsInput.value) || 0;
+            const totalPrice = numberOfSeats * pricePerSeat;
+            totalPriceDisplay.textContent = '₹' + totalPrice;
+        });
+    </script>
+</div>
+{% endblock %}

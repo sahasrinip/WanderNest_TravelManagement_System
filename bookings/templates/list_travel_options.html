@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Travel Options{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Available Travel Options</h2>
+    <div class="row">
+        {% for option in travel_options %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ option.type }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">From {{ option.source }} to {{ option.destination }}</h6>
+                    <p class="card-text">Date and Time: {{ option.date_time }}</p>
+                    <p class="card-text">Price: ₹{{ option.price }}</p>
+                    <a href="{% url 'book_travel' option.travel_id %}" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}My Bookings{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>My Bookings</h2>
+    <form method="get" class="mb-4">
+        <div class="form-group">
+            <input type="text" name="search" class="form-control" placeholder="Search..." value="{{ request.GET.search }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <ul class="list-group">
+        {% for booking in bookings %}
+        <li class="list-group-item">
+            Booking ID: {{ booking.booking_id }} - {{ booking.travel_option }} - {{ booking.number_of_seats }} seats - ₹{{ booking.total_price }} - {{ booking.status }}
+            {% if booking.status == 'Confirmed' %}
+            <a class="btn btn-danger btn-sm float-right" href="{% url 'cancel_booking' booking.booking_id %}">Cancel Booking</a>
+            {% endif %}
+        </li>
+        {% empty %}
+        <li class="list-group-item">No bookings found.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
