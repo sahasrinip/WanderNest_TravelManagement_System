@@ -28,7 +28,6 @@ Version Control: Git & GitHub
 **Setup and Installation**
 
 **Clone the repository:**
-git clone https://github.com/your-username/travel-management.git
 cd travel-management
 
 **Install the required packages:**
